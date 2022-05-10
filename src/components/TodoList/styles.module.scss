@@ -1,0 +1,15 @@
+.center {
+  margin:0 auto;
+}
+
+
+@media screen and (max-width:768px) {
+  body{
+    overflow:visible;
+  }
+  .textResponsive {
+    font-size:1rem;
+
+    
+  }
+}

@@ -1,12 +1,13 @@
 import { useEffect } from "react";
-import { LoginForm } from "../components/LoginForm";
+import { LoginForm } from "../components/Authenticate/LoginForm";
 import { api } from "../services/api";
 
 export function Login() {
 
 	return (
-		
-		<LoginForm />
+		<main>
+			<LoginForm />
+		</main>
 	
 	);
 }

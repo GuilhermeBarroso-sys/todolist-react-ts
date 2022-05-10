@@ -266,6 +266,11 @@
     postcss "7.0.32"
     purgecss "^2.3.0"
 
+"@headlessui/react@^1.6.0":
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/@headlessui/react/-/react-1.6.0.tgz#5943c0b1e5b1a02566ab45f665a05188b1d079c5"
+  integrity sha512-PlDuytBC6iDC/uMvpANm5VpRSuayyXMEeo/dNIwAZNHCfhZUqDQgLXjGu48SHsvMw22Kc3c3u9TOAMZNg+1vzw==
+
 "@heroicons/react@^1.0.6":
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/@heroicons/react/-/react-1.0.6.tgz#35dd26987228b39ef2316db3b1245c42eb19e324"
@@ -2071,6 +2076,11 @@ react-is@^16.13.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
+
+react-notifications-component@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/react-notifications-component/-/react-notifications-component-4.0.0.tgz#f12eac9856b08db25075db65a907b7fa49c5faad"
+  integrity sha512-wh2iETJNcSb8ctujPgUnGjYEj8dR+XrtX1l1C5Z8Zpbq+d9aNVCxrBLqx8FgQYxZj8m2cHJiWerMAnOA7P2ENA==
 
 react-refresh@^0.12.0:
   version "0.12.0"

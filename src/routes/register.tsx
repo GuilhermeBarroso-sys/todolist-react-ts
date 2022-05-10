@@ -1,9 +1,10 @@
-import { LoginForm} from "../components/LoginForm";
+import { LoginForm} from "../components/Authenticate/LoginForm";
+import { RegisterForm } from "../components/Authenticate/RegisterForm";
 
 export function Register() {
 	return (
 		<main>
-			<LoginForm />
+			<RegisterForm />
 		</main>
 	);
 }

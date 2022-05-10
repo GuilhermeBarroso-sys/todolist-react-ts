@@ -2,9 +2,10 @@ import { createContext, ReactNode, useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import { api } from "../services/api";
 type User = {
-	id:string;
-	name:string;
-	email:string;
+	sk: string
+  email: string,
+  id: string,
+  name: string
 }
 type AuthResponse = {
 	token: string;
@@ -31,6 +32,9 @@ interface ISignUp {
 	password: string;
 }
 
+
+
+
 export const AuthContext = createContext({} as AuthContextData);
 type AuthProvider = {
 	children: ReactNode;
@@ -41,11 +45,12 @@ export function AuthProvider(props : AuthProvider) {
 
 	async function signIn({email,password}: ISignIn)  {
 		try {
-			const response = await api.post<AuthResponse>("authenticate", {
+			const response = await api.post<AuthResponse>("users/authenticate", {
 				email,
 				password
 			});
 			const {token,user} = response.data;
+      
 			localStorage.setItem("@guitodolist:token", token);
 			api.defaults.headers.common.authorization = `Bearer ${token}`;
 			setUser(user);
@@ -57,12 +62,11 @@ export function AuthProvider(props : AuthProvider) {
 
 	async function signUp({name,email,password}:ISignUp) {
 		try {
-			await api.post<RegisterResponse>("user", {
+			await api.post<RegisterResponse>("users", {
 				name,
 				email,
 				password,
 			});
-			await signIn({ email , password});
 			return true;
 		} catch({response}) {
 			return false;
@@ -72,6 +76,7 @@ export function AuthProvider(props : AuthProvider) {
 	function signOut() {
 		setUser(null);
 		localStorage.removeItem("@guitodolist:token");
+		return true;
 	}
 
 	function isAuthenticated() {
@@ -85,16 +90,18 @@ export function AuthProvider(props : AuthProvider) {
 
 	async function fetchUser() {
 		try {
-			const {data} = await api.get("users/authenticate");
+			const {data} = await api.get<User>("users/authenticate");
 			setUser(data);
 		} catch (err) {
 			signOut();
 		}
+		
 	}
 	useEffect(() => {
 		const token = localStorage.getItem("@guitodolist:token");
 		if(token) {
 			api.defaults.headers.common.authorization = `Bearer ${token}`;
+			fetchUser();
 		}
 	},[]);
 
