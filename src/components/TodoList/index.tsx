@@ -15,6 +15,7 @@ export function TodoList() {
 	const [isLoading, setIsLoading] = useState(false);
 	const {user} = useContext(AuthContext);
 	useEffect(() => {
+
 		if(user) {
 			api.get<Todolist[]>(`tasks`).then((response) => {
 				const {data} = response; 
