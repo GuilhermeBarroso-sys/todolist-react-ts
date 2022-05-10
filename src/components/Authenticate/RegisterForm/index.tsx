@@ -7,6 +7,7 @@ import { Spinner } from "../../Spinner";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../../contexts/auth";
 import { Link, useNavigate } from "react-router-dom";
+import { addNotification } from "../../../functions/notifications/addNotification";
 
 export function RegisterForm() {
 	const navigate = useNavigate();
@@ -43,10 +44,13 @@ export function RegisterForm() {
 		buttonSubmitEl.current.disabled = false;
 		buttonSubmitEl.current.style.cursor = "pointer";
 		buttonSubmitEl.current.style.opacity = "1";
-		if(success) {
-			const isLogged = await signIn({email,password});
-			isLogged ? navigate("/"): Swal.fire("Error", "Algo deu errado, tente novamente!", "error");
+		if(!success) {
+			addNotification("Erro", "Esse email Já foi utilizado!", "danger", 5000, true);
+			return;
 		}
+		const isLogged = await signIn({email,password});
+		isLogged ? navigate("/"): Swal.fire("Error", "Algo deu errado, tente novamente!", "error");
+
 	}
 	return (
 		<>
