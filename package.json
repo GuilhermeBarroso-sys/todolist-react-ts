@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "deploy:s3": "yarn build && aws s3 rm s3://react-todolist-ts --recursive && aws s3 sync dist s3://react-todolist-ts && rm -R dist",
     "preview": "vite preview"
   },
   "dependencies": {
