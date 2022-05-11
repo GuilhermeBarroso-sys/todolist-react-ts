@@ -88,20 +88,16 @@ export function AuthProvider(props : AuthProvider) {
 		return true;
 	}
 
-	async function fetchUser() {
-		try {
-			const {data} = await api.get<User>("users/authenticate");
-			setUser(data);
-		} catch (err) {
-			signOut();
-		}
-		
-	}
+
 	useEffect(() => {
 		const token = localStorage.getItem("@guitodolist:token");
 		if(token) {
 			api.defaults.headers.common.authorization = `Bearer ${token}`;
-			fetchUser();
+			api.get<User>("users/authenticate")
+				.then(({data}) => {
+					setUser(data);
+				})
+				.catch(() => {signOut();});
 		}
 	},[]);
 

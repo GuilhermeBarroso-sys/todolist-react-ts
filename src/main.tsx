@@ -14,15 +14,15 @@ import { ReactNotifications } from "react-notifications-component";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   
-	<BrowserRouter>
-		<AuthProvider>
+	<AuthProvider>
+		<BrowserRouter>
 			<ReactNotifications />
 			<Routes>
-				<Route index element = {<Home />}></Route>
+				<Route path="home" element = {<Home />}></Route>
 				<Route path="login" element = {<Login />}></Route>
 				<Route path="register" element = {<Register />}></Route>
 			</Routes>
-		</AuthProvider>
-	</BrowserRouter>
+		</BrowserRouter>
+	</AuthProvider>
 	
 );
