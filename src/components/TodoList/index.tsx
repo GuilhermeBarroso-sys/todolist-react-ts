@@ -60,7 +60,7 @@ export function TodoList() {
 			<div className="mt-10">
 				<div className={`w-full flex flex-col`}>
 					{loading
-						? <BulletList  backgroundColor="rgb(59 130 246)" width={"70%"} height={"100%"}/>
+						? <div style = {{margin: "0 auto"}}> <BulletList  backgroundColor="rgb(59 130 246)"  width={"100%"} height={"340px"}/> </div>
 						: <div>
 							{todolist.length > 0 
 								? todolist.map(({id,name,status}) => {
