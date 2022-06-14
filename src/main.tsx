@@ -10,18 +10,21 @@ import { Register } from "./routes/register";
 import { AuthProvider } from "./contexts/auth";
 import Home from "./components/Home";
 import { ReactNotifications } from "react-notifications-component";
+import { LoadingProvider } from "./contexts/globalLoading";
 
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   
 	<AuthProvider>
 		<BrowserRouter>
-			<ReactNotifications />
-			<Routes>
-				<Route path="home" element = {<Home />}></Route>
-				<Route path="login" element = {<Login />}></Route>
-				<Route path="register" element = {<Register />}></Route>
-			</Routes>
+			<LoadingProvider>
+				<ReactNotifications />
+				<Routes>
+					<Route index element = {<Home />}></Route>
+					<Route path="login" element = {<Login />}></Route>
+					<Route path="register" element = {<Register />}></Route>
+				</Routes>
+			</LoadingProvider>
 		</BrowserRouter>
 	</AuthProvider>
 	
