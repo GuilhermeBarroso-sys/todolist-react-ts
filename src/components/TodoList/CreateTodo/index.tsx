@@ -22,6 +22,8 @@ export function CreateTodo({todolist,setTodolist} : CreateTodoProps) {
 		event.preventDefault();
 		if(!todoName) {
 			addNotification("Erro!", "Por favor, digite o nome da tarefa", "danger", 2500, true);
+			setLoading(false);
+
 			return;
 		}
 		api.post<TodolistCreateResponse>(`tasks`, {
