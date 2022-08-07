@@ -1,6 +1,6 @@
 # todolist-react-ts
 ## About this project
-  This todo list project is an open source backend, I used these technologies:
+  This todo list project is an open source front-end, I used these technologies:
   - React (Vite App)
   - Tailwindcss
   - Axios
