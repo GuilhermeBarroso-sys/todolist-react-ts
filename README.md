@@ -1,28 +1,26 @@
 # todolist-react-ts
-## Sobre o projeto
-  Esse projeto é uma todolist Open-source, utilizando as seguintes técnologias:
+## About this project
+  This todo list project is an open source backend, I used these technologies:
   - React (Vite App)
   - Tailwindcss
   - Axios
   - React Routes
   - Eslint
-## O projeto está disponivel no seguinte link: https://todo.devgui.info
+## This project is in production at these link: https://todo.devgui.info
   
-## Como executar o projeto (opcional)
+## How to execute this project (optional)
 ### 1 - Backend
- No Arquivo ./src/services/api.ts encontra-se o link de produção deste projeto.  Caso queira optar por executar localmente, o repositório do backend está aqui: https://github.com/GuilhermeBarroso-sys/todolist-serverless-ts <br><br>
-### 2 - Baixar dependências e executar o projeto
-Nesse Projeto eu utilizei o npm, então:
+ The path ./src/services/api.js has the production link of this project, if you want a execute the back-end locally, follow this link: https://github.com/GuilhermeBarroso-sys/todolist-serverless-ts <br><br>
+ 
+### 2 - Download dependencies and start the project
+The project use npm, then:
+  
+
 ```ts
-  yarn // Baixar dependências 
-  yarn dev // Executar o projeto
+  npm // Download the dependencies
+  npm run dev 
 ```
-Pronto, o projeto está rodando! <br>
+Done, the project is running! <br>
 
-
-    
-Atenciosamente <br>
-Guilherme
-    
 
 
