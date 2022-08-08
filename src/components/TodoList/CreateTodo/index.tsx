@@ -31,7 +31,7 @@ export function CreateTodo({todolist,setTodolist} : CreateTodoProps) {
 		}).
 			then(({status : statusCode, data}) => {
 				setTodoName("");
-				statusCode === 201 && addNotification("Sucesso", "Task add with success!", "success");
+				statusCode === 201 && addNotification("Success", "Task add with success!", "success");
 				const {id,name,status} = data;
 				todoNameRef.current.value = "";
 				setTodolist([...todolist, {

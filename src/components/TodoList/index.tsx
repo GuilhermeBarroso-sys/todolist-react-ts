@@ -45,7 +45,7 @@ export function TodoList() {
 		api.delete(`tasks/delete/${id}`)
 			.then(() => {
 				setTodolist(todolist.filter(todo => todo.id !== id));
-				addNotification("Sucesso!", "Task deletada com sucesso!", "info");
+				addNotification("Success!", "Task deleted with Success!", "info");
 				setIsLoading(false);
 
 			})
