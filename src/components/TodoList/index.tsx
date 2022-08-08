@@ -101,7 +101,7 @@ export function TodoList() {
 								})
 								:
 								<div className = "flex flex-col align-middle justify-center">
-									<h1 className="text-2xl text-gray-700 mb-10 ">Parece que você não tem tarefas criadas :D</h1>
+									<h1 className="text-2xl text-gray-700 mb-10 ">you don't have any created Swtask :D </h1>
 									<div className="flex justify-end">
 
 										<img src = {notasks} className="w-full h-80 animate-pulse" />

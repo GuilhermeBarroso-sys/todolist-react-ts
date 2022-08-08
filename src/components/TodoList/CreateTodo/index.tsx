@@ -21,7 +21,7 @@ export function CreateTodo({todolist,setTodolist} : CreateTodoProps) {
 		setLoading(true);
 		event.preventDefault();
 		if(!todoName) {
-			addNotification("Erro!", "Por favor, digite o nome da tarefa", "danger", 2500, true);
+			addNotification("Erro!", "Please, Write the name of task", "danger", 2500, true);
 			setLoading(false);
 
 			return;
@@ -31,7 +31,7 @@ export function CreateTodo({todolist,setTodolist} : CreateTodoProps) {
 		}).
 			then(({status : statusCode, data}) => {
 				setTodoName("");
-				statusCode === 201 && addNotification("Sucesso", "Tarefa adicionada com sucesso!", "success");
+				statusCode === 201 && addNotification("Sucesso", "Task add with success!", "success");
 				const {id,name,status} = data;
 				todoNameRef.current.value = "";
 				setTodolist([...todolist, {
@@ -49,7 +49,7 @@ export function CreateTodo({todolist,setTodolist} : CreateTodoProps) {
 			<form onSubmit={createTodo}>
 				
 				<div className={`flex items-center justify-center transition-all duration-500 text-center`}>
-					<input ref={todoNameRef}  onChange={(event)=>{setTodoName(event.target.value);}} className="w-3/5 text-blue-500 font-extrabold placeholder-blue-400  py-1.5 px-2 border-blue-600 rounded border-2 focus:outline-none" type="text" placeholder="Digite o nome" aria-label="nome da tarefa" />
+					<input ref={todoNameRef}  onChange={(event)=>{setTodoName(event.target.value);}} className="w-3/5 text-blue-500 font-extrabold placeholder-blue-400  py-1.5 px-2 border-blue-600 rounded border-2 focus:outline-none" type="text" placeholder="Task name" aria-label="Task name" />
 					{loading ? <Spinner  />:<button className="flex-shrink-0 bg-blue-500 hover:bg-blue-600 border-blue-500 hover:border-blue-600 text-sm  text-white py-2 px-3 rounded" type="submit">
 						
 						<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">

@@ -36,7 +36,7 @@ export function RegisterForm() {
 			buttonSubmitEl.current.disabled = false;
 			buttonSubmitEl.current.style.cursor = "pointer";
 			buttonSubmitEl.current.style.opacity = "1";
-			Swal.fire("Error", "Por favor, verifique os campos!", "error");
+			Swal.fire("Error", "Please, check the fields!", "error");
 			return;
 		}
 		const success = await signUp({name, email,password});
@@ -49,7 +49,7 @@ export function RegisterForm() {
 			return;
 		}
 		const isLogged = await signIn({email,password});
-		isLogged ? navigate("/"): Swal.fire("Error", "Algo deu errado, tente novamente!", "error");
+		isLogged ? navigate("/"): Swal.fire("Error", "Something is wrong, try again later!", "error");
 
 	}
 	return (
@@ -61,13 +61,13 @@ export function RegisterForm() {
 							className={`mx-auto h-12 w-auto ${styles.imgLogin}`}
 							src={login}
 						/>
-						<h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Registrar-se</h2>
+						<h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Sign Up</h2>
 					</div>
 					<form  className="mt-8 space-y-6" onSubmit={handleSubmit}>
 					
 						<div className="rounded-md shadow-sm -space-y-px">
 							<div>
-								<label htmlFor="name-address" className="sr-only">nome</label>
+								<label htmlFor="name-address" className="sr-only">name</label>
 								<input
 									id="name-address"
 									name="name"
@@ -78,7 +78,7 @@ export function RegisterForm() {
 									autoComplete="name"
 									required
 									className={`appearance-none rounded-none relative block w-full px-3 py-2 border  placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 border-gray-300 focus:border-indigo-500 focus:z-10 sm:text-sm`}
-									placeholder="Digite seu Nome"
+									placeholder="name"
 								/>
 							</div>
 							<br/>
@@ -99,7 +99,7 @@ export function RegisterForm() {
 										autoComplete="email"
 										required
 										className={`appearance-none rounded-none relative block w-full px-3 py-2 border  placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none ${invalidEmail ? "focus:ring-rose-600 focus:border-rose-600 border-rose-600"  : "focus:ring-indigo-500 border-gray-300 focus:border-indigo-500"} focus:z-10 sm:text-sm`}
-										placeholder="Digite seu Email"
+										placeholder="email"
 									/>
 								</div>
 							</div>
@@ -116,7 +116,7 @@ export function RegisterForm() {
 									autoComplete="current-password"
 									required
 									className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-									placeholder="Digite sua senha"
+									placeholder="password"
 								/>
 							</div>
 						</div>
@@ -143,7 +143,7 @@ export function RegisterForm() {
 								<span>{spinner ? <Spinner /> : "Entrar"}</span>
 							</button>
 						</div>
-						<p className="text-sm text-indigo-600 hover:text-indigo-400 cursor-pointer text-center"> <Link to ="/login">Ja tem um cadastro? Clique aqui! </Link></p>
+						<p className="text-sm text-indigo-600 hover:text-indigo-400 cursor-pointer text-center"> <Link to ="/login">Have an account? Clique here! </Link></p>
 					</form>
 				</div>
 			</div>

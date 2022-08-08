@@ -32,9 +32,6 @@ interface ISignUp {
 	password: string;
 }
 
-
-
-
 export const AuthContext = createContext({} as AuthContextData);
 type AuthProvider = {
 	children: ReactNode;

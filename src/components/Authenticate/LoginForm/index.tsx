@@ -34,7 +34,7 @@ export function LoginForm() {
 			buttonSubmitEl.current.disabled = false;
 			buttonSubmitEl.current.style.cursor = "pointer";
 			buttonSubmitEl.current.style.opacity = "1";
-			Swal.fire("Error", "Por favor, verifique os campos!", "error");
+			Swal.fire("Error", "Please, Check the fields!", "error");
 			return;
 		}
 		const success = await signIn({email,password});
@@ -43,7 +43,7 @@ export function LoginForm() {
 			buttonSubmitEl.current.disabled = false;
 			buttonSubmitEl.current.style.cursor = "pointer";
 			buttonSubmitEl.current.style.opacity = "1";
-			Swal.fire("Error", "Por favor, verifique as credenciais e tente novamente!", "error");
+			Swal.fire("Error", "Please, Check the credentials and try again!", "error");
 
 		}
 	}
@@ -56,7 +56,7 @@ export function LoginForm() {
 							className={`mx-auto h-12 w-auto ${styles.imgLogin}`}
 							src={login}
 						/>
-						<h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Entrar</h2>
+						<h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Sign In</h2>
 					</div>
 					<form  className="mt-8 space-y-6" onSubmit={handleSubmit} >
 						<div className="rounded-md shadow-sm -space-y-px">
@@ -76,7 +76,7 @@ export function LoginForm() {
 									autoComplete="email"
 									required
 									className={`appearance-none rounded-none relative block w-full px-3 py-2 border  placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none ${invalidEmail ? "focus:ring-rose-600 focus:border-rose-600 border-rose-600"  : "focus:ring-indigo-500 border-gray-300 focus:border-indigo-500"} focus:z-10 sm:text-sm`}
-									placeholder="Digite seu Email"
+									placeholder="email"
 								/>
 							</div>
 							<br/>
@@ -92,7 +92,7 @@ export function LoginForm() {
 									autoComplete="current-password"
 									required
 									className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-									placeholder="Digite sua senha"
+									placeholder="password"
 								/>
 							</div>
 						</div>
@@ -116,10 +116,10 @@ export function LoginForm() {
 										<path strokeLinecap="round" strokeLinejoin="round" d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z" />
 									</svg>
 								</span>
-								<span>{spinner ? <Spinner /> : "Entrar"}</span>
+								<span>{spinner ? <Spinner /> : "Login"}</span>
 							</button>
 						</div>
-						<p className="text-sm text-indigo-600 hover:text-indigo-400 cursor-pointer text-center"> <Link to ="/register">Nao é cadastrado? Clique aqui! </Link></p>
+						<p className="text-sm text-indigo-600 hover:text-indigo-400 cursor-pointer text-center"> <Link to ="/register">Doesn't have an account? Click here </Link></p>
 					</form>
 				</div>
 			</div>
