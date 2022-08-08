@@ -22,7 +22,7 @@ export function Navbar() {
 	}
 	return (
 		<Disclosure as="nav" className="bg-blue-500 flex items-baseline justify-around">
-			{user && <h1 className="text-2xl text-slate-50">Welcome, <span className={"text-white font-extrabold"}>{firstName}!</span></h1>}
+	
 			<p><button className = 'text-right text-white text-xl font-bold hover:text-gray-200' onClick={handleSignOut}>Logout</button></p>
 		</Disclosure>
 	);
