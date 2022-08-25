@@ -45,7 +45,7 @@ export function RegisterForm() {
 		buttonSubmitEl.current.style.cursor = "pointer";
 		buttonSubmitEl.current.style.opacity = "1";
 		if(!success) {
-			addNotification("Erro", "Esse email Já foi utilizado!", "danger", 5000, true);
+			addNotification("Erro", "This email already been used!", "danger", 5000, true);
 			return;
 		}
 		const isLogged = await signIn({email,password});
