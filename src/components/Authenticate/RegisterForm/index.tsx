@@ -143,7 +143,7 @@ export function RegisterForm() {
 								<span>{spinner ? <Spinner /> : "Entrar"}</span>
 							</button>
 						</div>
-						<p className="text-sm text-indigo-600 hover:text-indigo-400 cursor-pointer text-center"> <Link to ="/login">Have an account? Clique here! </Link></p>
+						<p className="text-sm text-indigo-600 hover:text-indigo-400 cursor-pointer text-center"> <Link to ="/login">Have an account? Click here! </Link></p>
 					</form>
 				</div>
 			</div>
